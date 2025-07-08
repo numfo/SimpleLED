@@ -1,0 +1,20 @@
+{
+  "name": "SimpleLED",
+  "version": "1.0.0",
+  "description": " A simple LED control library for Arduino",
+  "keywords": "led, arduino, esp32",
+
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": [
+    {
+      "name": "Ambe Numfor",
+      "email": "email@example.com"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"]
+}
