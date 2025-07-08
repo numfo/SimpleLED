@@ -23,10 +23,12 @@ Copy the SimpleLED folder to your PlatformIO lib directory.
 ### Method 2: PlatformIO
 
 Add to your platformio.ini:
-lib_deps = https://github.com/numfo/SimpleLED.git
+lib_deps =
+https://github.com/numfo/SimpleLED.git
 
 ## Quick Start
 
+```cpp
 #include "SimpleLED.h"
 
 SimpleLED led(2); // Pin 2
@@ -38,6 +40,7 @@ led.setPattern(HEARTBEAT);
 void loop() {
 led.update(); // Must be called regularly
 }
+```
 
 ## API Reference
 
@@ -51,52 +54,53 @@ led.update(); // Must be called regularly
 - **void toggle()** - Toggle LED state
 - **bool isOn()** - Check if LED is on
 
-Brightness Control
+### Brightness Control
 
 void setBrightness(int brightness) - Set brightness (0-255)
 int getBrightness() - Get current brightness
 void dim(int amount) - Decrease brightness
 void brighten(int amount) - Increase brightness
 
-Pattern Control
+### Pattern Control
 
 void setPattern(BlinkPattern pattern) - Set blink pattern
 void setPattern(BlinkPattern pattern, unsigned long interval) - Set pattern with custom interval
 void stopPattern() - Stop current pattern
 void update() - Update pattern state (call in loop)
 
-Available Patterns
+### Available Patterns
 
-SOLID - Always on
-SLOW_BLINK - Slow blinking
-FAST_BLINK - Fast blinking
-HEARTBEAT - Double blink pattern
-FADE - Fade in/out (PWM pins only)
-STROBE - Strobe effect
-CUSTOM - Custom interval blinking
+- SOLID - Always on
+- SLOW_BLINK - Slow blinking
+- FAST_BLINK - Fast blinking
+- HEARTBEAT - Double blink pattern
+- FADE - Fade in/out (PWM pins only)
+- STROBE - Strobe effect
+- CUSTOM - Custom interval blinking
 
-LEDController Class
+### LEDController Class
+
 Constructor
 
 LEDController(int pin1, int pin2, int pin3) - Control 3 LEDs
 
-Individual Control
+### Individual Control
 
 SimpleLED& led(int index) - Access individual LED (0-2)
 
-Group Control
+### Group Control
 
-void allOn() - Turn all LEDs on
-void allOff() - Turn all LEDs off
-void allSetBrightness(int brightness) - Set brightness for all LEDs
-void allSetPattern(BlinkPattern pattern) - Set pattern for all LEDs
+- void allOn() - Turn all LEDs on
+- void allOff() - Turn all LEDs off
+- void allSetBrightness(int brightness) - Set brightness for all LEDs
+- void allSetPattern(BlinkPattern pattern) - Set pattern for all LEDs
 
-Sequence Effects
+### Sequence Effects
 
-void chase(unsigned long interval) - Chase effect
-void wave(unsigned long interval) - Wave effect
-void alternating(unsigned long interval) - Alternating effect
-void update() - Update all LEDs
+- void chase(unsigned long interval) - Chase effect
+- void wave(unsigned long interval) - Wave effect
+- void alternating(unsigned long interval) - Alternating effect
+- void update() - Update all LEDs
 
 ## Hardware Requirements
 
